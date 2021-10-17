@@ -12,19 +12,41 @@ main {
 .container {
   max-width: 100%;
   max-height: 100%;
-  margin: 7% auto;
+  margin: 6% auto;
 }
 
-.container input {
-  order: 3;
+input:before {
+  content: '';
+  cursor: pointer;
+  display: block;
+  position: relative;
+  padding: 20px;
+}
+
+input {
+  background-color: initial;
+  cursor: default;
+  appearance: auto;
+  box-sizing: border-box;
+  margin: 5px;
 }
 
 .text-container {
-  order: 2;
+  display: flex;
+  overflow-x: hidden;
+  margin-top: 3%;
 }
 
-.first-meme {
-  order: 1;
+.text {
+  display: flex;
+  flex: 0 0 70vw;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-content: center;
+  overflow: hidden;
+  transition: -webkit-transform 1600ms, transform 1600ms;
 }
 
 .squid-meme {
@@ -32,7 +54,6 @@ main {
   height: 100%;
   margin: auto;
   border-radius: 1.3%;
-  /* margin-bottom: 4%; */
 }
 
 p {
@@ -42,13 +63,6 @@ p {
   margin: 0;
 }
 
-/* .slider {
-  max-width: 9%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-} */
-
 .meme-container::-webkit-scrollbar {
   display: none;
 }
@@ -57,6 +71,7 @@ p {
   max-height: 70vh;
   display: flex;
   overflow-x: hidden;
+  margin-top: 2%;
 }
 
 .meme {
@@ -107,8 +122,17 @@ p {
   cursor: pointer;
 }
 
-.dot:hover {
+/* .container:hover input ~ .checkmark {
   background-color: white;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #2e2d2d;
+  border-style: 1% solid #6495ED;
+} */
+
+.dot:hover {
+  color: red;
 }
 
 .dot:active {
@@ -120,6 +144,34 @@ p {
   background-color: #2e2d2d;
   border: none;
   border-style: 1% solid white;
+}
+
+.dot0:checked ~ .text-container .text:nth-child(1),
+.dot0:checked ~ .text-container .text:nth-child(2), 
+.dot0:checked ~ .text-container .text:nth-child(3), 
+.dot0:checked ~ .text-container .text:nth-child(4)  {
+  transform: translateX(0vw);
+}
+
+.dot1:checked ~ .text-container .text:nth-child(1),
+.dot1:checked ~ .text-container .text:nth-child(2), 
+.dot1:checked ~ .text-container .text:nth-child(3), 
+.dot1:checked ~ .text-container .text:nth-child(4)  {
+  transform: translateX(-70vw);
+}
+
+.dot2:checked ~ .text-container .text:nth-child(1),
+.dot2:checked ~ .text-container .text:nth-child(2), 
+.dot2:checked ~ .text-container .text:nth-child(3), 
+.dot2:checked ~ .text-container .text:nth-child(4)  {
+  transform: translateX(-140vw);
+}
+
+.dot3:checked ~ .text-container .text:nth-child(1),
+.dot3:checked ~ .text-container .text:nth-child(2), 
+.dot3:checked ~ .text-container .text:nth-child(3), 
+.dot3:checked ~ .text-container .text:nth-child(4)  {
+  transform: translateX(-210vw);
 }
 
 @media (max-width: 320px) {
