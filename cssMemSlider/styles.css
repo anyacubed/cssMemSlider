@@ -12,7 +12,7 @@ main {
 .container {
   max-width: 100%;
   max-height: 100%;
-  margin: 6% auto;
+  margin: 4% auto;
 }
 
 input:before {
@@ -21,6 +21,8 @@ input:before {
   display: block;
   position: relative;
   padding: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
 }
 
 input {
@@ -34,7 +36,7 @@ input {
 .text-container {
   display: flex;
   overflow-x: hidden;
-  margin-top: 3%;
+  margin-top: 2%;
 }
 
 .text {
@@ -46,7 +48,7 @@ input {
   justify-content: flex-start;
   align-content: center;
   overflow: hidden;
-  transition: -webkit-transform 1600ms, transform 1600ms;
+  transition: -webkit-transform 1000ms, transform 1000ms;
 }
 
 .squid-meme {
@@ -83,7 +85,7 @@ p {
   justify-content: center;
   align-content: center;
   overflow: hidden;
-  transition: -webkit-transform 1600ms, transform 1600ms;
+  transition: -webkit-transform 1000ms, transform 1000ms;
 }
 
 .dot0:checked ~ .meme-container .meme:nth-child(1),
@@ -122,28 +124,35 @@ p {
   cursor: pointer;
 }
 
-/* .container:hover input ~ .checkmark {
+.dot {
+  width: 1.125em;
+  height: 1.125em;
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border-radius: 1em;
+  border: 0em solid #6495ED;
+  outline: none !important;
+}
+  
+.dot:checked{
+  background-image: radial-gradient(circle at center, #2e2d2d, #2e2d2d 37.5%, #6495ED 40%, #6495ED 100%);
+  outline: none;
+}
+
+.dot:hover {
   background-color: white;
 }
 
-.container input:checked ~ .checkmark {
-  background-color: #2e2d2d;
-  border-style: 1% solid #6495ED;
-} */
-
-.dot:hover {
-  color: red;
-}
-
 .dot:active {
-  background-color: #2e2d2d;
-  border-style: 1% solid #6495ED;
+  background-color: gray;
 }
 
-.dot:active:hover {
-  background-color: #2e2d2d;
-  border: none;
-  border-style: 1% solid white;
+.dot:checked:hover {
+  background-image: radial-gradient(circle at center, #2e2d2d, #2e2d2d 37.5%, white 40%, white 100%);
+  outline: none;
 }
 
 .dot0:checked ~ .text-container .text:nth-child(1),
@@ -176,40 +185,30 @@ p {
 
 @media (max-width: 320px) {
 
-  main {
-    max-width: 96vw;
-    max-height: 96vh;
-  }
-
   .container {
-    margin: 3.5% auto;
+    margin: 5% auto;
   }
 
-  .squid-meme {
-    margin-bottom: 3.5%;
+  input:before {
+    padding: 10px;
+    margin-top: -5px;
+    margin-left: -5px;
   }
 
-  .area-under-img {
-    flex-direction: column;
+  input:first-child {
+    margin-left: 30%;
+  }
+
+  .text-container {
+    margin-top: 4%;
   }
   
   p {
-    order: 2;
-    font-size: 1.125rem;
-  }
-  
-  .slider {
-    order: 1;
-    max-width: 28%;
-    margin: 0 auto;
-    margin-bottom: 3.5%;
+    font-size: 1rem;
   }
   
   .dot {
     width: 0.7em;
     height: 0.7em;
-    border-radius: 50%;
-    background-color: #6495ED;
-    cursor: pointer;
   }
 }
