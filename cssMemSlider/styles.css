@@ -1,0 +1,214 @@
+body {
+  margin: 0;
+  background-color:	#2e2d2d;
+}
+
+main {
+  max-width: 70vw;
+  max-height: 70vh;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 4% auto;
+}
+
+input:before {
+  content: '';
+  cursor: pointer;
+  display: block;
+  position: relative;
+  padding: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+input {
+  background-color: initial;
+  cursor: default;
+  appearance: auto;
+  box-sizing: border-box;
+  margin: 5px;
+}
+
+.text-container {
+  display: flex;
+  overflow-x: hidden;
+  margin-top: 2%;
+}
+
+.text {
+  display: flex;
+  flex: 0 0 70vw;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-content: center;
+  overflow: hidden;
+  transition: -webkit-transform 1000ms, transform 1000ms;
+}
+
+.squid-meme {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  border-radius: 1.3%;
+}
+
+p {
+  font-size: 1.75rem;
+  letter-spacing: 0.7%;
+  color: white;
+  margin: 0;
+}
+
+.meme-container::-webkit-scrollbar {
+  display: none;
+}
+
+.meme-container {
+  max-height: 70vh;
+  display: flex;
+  overflow-x: hidden;
+  margin-top: 2%;
+}
+
+.meme {
+  display: flex;
+  flex: 0 0 70vw;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
+  transition: -webkit-transform 1000ms, transform 1000ms;
+}
+
+.dot0:checked ~ .meme-container .meme:nth-child(1),
+.dot0:checked ~ .meme-container .meme:nth-child(2), 
+.dot0:checked ~ .meme-container .meme:nth-child(3), 
+.dot0:checked ~ .meme-container .meme:nth-child(4)  {
+  transform: translateX(0vw);
+}
+
+.dot1:checked ~ .meme-container .meme:nth-child(1),
+.dot1:checked ~ .meme-container .meme:nth-child(2), 
+.dot1:checked ~ .meme-container .meme:nth-child(3), 
+.dot1:checked ~ .meme-container .meme:nth-child(4)  {
+  transform: translateX(-70vw);
+}
+
+.dot2:checked ~ .meme-container .meme:nth-child(1),
+.dot2:checked ~ .meme-container .meme:nth-child(2), 
+.dot2:checked ~ .meme-container .meme:nth-child(3), 
+.dot2:checked ~ .meme-container .meme:nth-child(4)  {
+  transform: translateX(-140vw);
+}
+
+.dot3:checked ~ .meme-container .meme:nth-child(1),
+.dot3:checked ~ .meme-container .meme:nth-child(2), 
+.dot3:checked ~ .meme-container .meme:nth-child(3), 
+.dot3:checked ~ .meme-container .meme:nth-child(4)  {
+  transform: translateX(-210vw);
+}
+
+.dot {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: #6495ED;
+  cursor: pointer;
+}
+
+.dot {
+  width: 1.125em;
+  height: 1.125em;
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border-radius: 1em;
+  border: 0em solid #6495ED;
+  outline: none !important;
+}
+  
+.dot:checked{
+  background-image: radial-gradient(circle at center, #2e2d2d, #2e2d2d 37.5%, #6495ED 40%, #6495ED 100%);
+  outline: none;
+}
+
+.dot:hover {
+  background-color: white;
+}
+
+.dot:active {
+  background-color: gray;
+}
+
+.dot:checked:hover {
+  background-image: radial-gradient(circle at center, #2e2d2d, #2e2d2d 37.5%, white 40%, white 100%);
+  outline: none;
+}
+
+.dot0:checked ~ .text-container .text:nth-child(1),
+.dot0:checked ~ .text-container .text:nth-child(2), 
+.dot0:checked ~ .text-container .text:nth-child(3), 
+.dot0:checked ~ .text-container .text:nth-child(4)  {
+  transform: translateX(0vw);
+}
+
+.dot1:checked ~ .text-container .text:nth-child(1),
+.dot1:checked ~ .text-container .text:nth-child(2), 
+.dot1:checked ~ .text-container .text:nth-child(3), 
+.dot1:checked ~ .text-container .text:nth-child(4)  {
+  transform: translateX(-70vw);
+}
+
+.dot2:checked ~ .text-container .text:nth-child(1),
+.dot2:checked ~ .text-container .text:nth-child(2), 
+.dot2:checked ~ .text-container .text:nth-child(3), 
+.dot2:checked ~ .text-container .text:nth-child(4)  {
+  transform: translateX(-140vw);
+}
+
+.dot3:checked ~ .text-container .text:nth-child(1),
+.dot3:checked ~ .text-container .text:nth-child(2), 
+.dot3:checked ~ .text-container .text:nth-child(3), 
+.dot3:checked ~ .text-container .text:nth-child(4)  {
+  transform: translateX(-210vw);
+}
+
+@media (max-width: 320px) {
+
+  .container {
+    margin: 5% auto;
+  }
+
+  input:before {
+    padding: 10px;
+    margin-top: -5px;
+    margin-left: -5px;
+  }
+
+  input:first-child {
+    margin-left: 30%;
+  }
+
+  .text-container {
+    margin-top: 4%;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+  
+  .dot {
+    width: 0.7em;
+    height: 0.7em;
+  }
+}
